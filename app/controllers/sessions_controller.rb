@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
     get '/login' do
-        redirect '/posts' if logged_in?
+        redirect '/places' if logged_in?
         @failed = false
         erb :'sessions/login'
     end
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     end
 
     get '/signup' do
-        redirect '/posts' if logged_in?
+        redirect '/places' if logged_in?
         erb :'sessions/signup'
     end
 
