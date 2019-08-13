@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
         @places = Place.all
         erb :'/places/index'
     end
+    
     get '/places/new' do
         erb :'/places/new'
     end
@@ -15,9 +16,7 @@ class PlacesController < ApplicationController
         erb :'/places/index'
     end
 
-
-
-    post '/places' do
+    post '/places/new' do
         if !params.empty?
          @place = Place.create(params)
          redirect "/places/#{@place.id}"
@@ -26,8 +25,7 @@ class PlacesController < ApplicationController
     end
 
     get '/places/:id' do 
-        binding.pry
-        @place = Place.find()
+        @place = Place.find(params[:id])
         erb :'/places/show'
     end 
 end
