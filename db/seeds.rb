@@ -1,0 +1,16 @@
+m = User.create(username: "Morpheus", password: "bluepill")
+o = User.create(username: "Micah", password: "thor")
+n = User.create(username: "Caleb", password: "test")
+i = User.create(username: "Bonny", password: "bark")
+
+Place.create(city: "Phoenix", state: "Arizona", country: "USA", visit_date: "June 1980", user: m)
+Place.create(city: "Kopenhagen", state: "Kopenhagen", country: "Demark", visit_date: "June 2017", user: m)
+Place.create(city: "Barcelona", state: "Cataluña", country: "Spain", visit_date: "June 2018", user: n)
+Place.create(city: "Vakencia", state: "Cataluña", country: "Spain", visit_date: "June 2018", user: o)
+Place.create(city: "Amsterdam", state: "Amsterdam", country: "Nederlands", visit_date: "April 2016", user: m)
+Place.create(city: "San Juan", state: "Puerto Rico", country: "USA", visit_date: "June 1999", user: i)
+
+Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: m)
+Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: o)
+Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: n)
+Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: i)

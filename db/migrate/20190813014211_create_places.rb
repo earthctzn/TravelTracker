@@ -4,8 +4,9 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :state
       t.string :country
-      t.belongs_to :users
-      t.string :visit_date
+      t.integer :user_id
+      t.integer :story_id
+      t.datetime :visit_date
       t.timestamp
     end
   end

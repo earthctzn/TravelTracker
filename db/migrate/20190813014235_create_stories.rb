@@ -2,7 +2,7 @@ class CreateStories < ActiveRecord::Migration[5.2]
   def change
     create_table :stories do |t|
       t.string :content
-      t.belongs_to :users
+      t.integer :user_id
       t.timestamp
     end
   end

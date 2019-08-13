@@ -1,6 +1,6 @@
 class Place < ActiveRecord::Base
 
-    belongs_to :users
-    has_many :stories, through: :users
+    belongs_to :user
+    belongs_to :story
 
 end

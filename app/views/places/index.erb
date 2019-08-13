@@ -1,9 +1,11 @@
 <div class="inner">
-    <h3>Places</h3>
-    <ul>
+    <h1>Places</h1>
         <% @places.each do |p|%>
-        <li>City: <%= p.city%></li>
-        <li>State: <%= p.state%></li>
-        <li>Country: <%= p.country%></li>
-    </ul>
+        <p><%= p.city%></p>
+        <% end %>
+        <ul class="actions">
+			<li><a href="/places/new" class="button alt scrolly big">Add a Place</a></li>
+            <li><a href="/stories/new" class="button alt scrolly big">Add a Story</a></li>
+		</ul>
+	</div> %>
 </div>
