@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         user = User.find_by(username: params[:username])
         if !!user && user.authenticate(params[:password])
             session[:user_id] = user.id
-            redirect :'posts/index'
+            redirect :'places/index'
         else
             @failed = true
             erb :'sessions/login'
@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
     post '/signup' do
         @user = User.create(params)
         session[:user_id] = @user.id
-        redirect :'posts/index'
+        redirect :'/places'
 
     end
 

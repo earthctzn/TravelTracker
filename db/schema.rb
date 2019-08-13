@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_12_062852) do
+ActiveRecord::Schema.define(version: 2019_08_13_014235) do
+
+  create_table "places", force: :cascade do |t|
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.integer "users_id"
+    t.string "visit_date"
+    t.index ["users_id"], name: "index_places_on_users_id"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "content"
+    t.integer "users_id"
+    t.index ["users_id"], name: "index_stories_on_users_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
