@@ -2,6 +2,8 @@ require_relative "./config/env"
 
 use Rack::MethodOverride
 use SessionsController
-use PostsController
+use PlacesController
+use StoriesController
+use UsersController
 
 run ApplicationController
