@@ -1,5 +1,5 @@
-<div class="column">
-		<h3>Hey now! Log in below.</h3> 
+<div class="inner">
+	<h1>Hey now! Log in below.</h1> 
 	<form action="/login" method="post">
 		<div class="field half first">
 			<label for="username">Username</label>
@@ -9,9 +9,13 @@
 			<label for="password">Password</label>
 			<input name="password" id="password" type="password" placeholder="Password">
 		</div>
+		<% if @failed%>
+			<p class="warning"> Oops! Something's wrong in your username/password combo.</p>
+		<%end%>
 
 		<ul class="actions">
-			<li><input value="Log In" class="button" type="submit"></li>
+			<li><input value="Log In" class="button alt scrolly big" type="submit"></li>
 		</ul>
+
 	</form>
 </div>

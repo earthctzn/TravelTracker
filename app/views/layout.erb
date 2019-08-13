@@ -17,7 +17,7 @@
 			<!-- Nav -->
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html" class="active"><span class="icon fa-home"></span></a></li>
+						<li><a href="/" class="active"><span class="icon fa-home"></span></a></li>
 						<li><a href="gallery.html"><span class="icon fa-camera-retro"></span></a></li>
 						<li><a href="generic.html"><span class="icon fa-file-text-o"></span></a></li>
 					</ul>
@@ -28,14 +28,15 @@
 
 					<!-- Banner -->
 						<section id="banner">
-							<div class="inner">
+							<%= yield %>
+							<%# <div class="inner">
 								<h1>Hey traveler! </h1>
 								<p>Where have you been?
 								<ul class="actions">
 									<li><a href="/login" class="button alt scrolly big">Log In</a></li>
                                     <li><a href="/signup" class="button alt scrolly big">Sign Up</a></li>
 								</ul>
-							</div>
+							</div> %>
 						</section>
 
 					<!-- Gallery -->
@@ -73,7 +74,7 @@
 										</div>
 									</div>
 									<footer>
-										<a href="gallery.html" class="button big">Full Gallery</a>
+										<%# <a href="gallery.html" class="button big">Full Gallery</a> %>
 									</footer>
 								</div>
 						</section>
