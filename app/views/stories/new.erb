@@ -1,1 +1,18 @@
-<h1>Create stories</h1>
+<div class="inner">
+	<h1>Tell us your story!</h1>
+    <form action="/stories" method="post">
+		<div class="field half">
+			<label for="title"></label>
+			<input name="title" id="title" type="text" placeholder="My trip to Gazorpazorp.">
+		</div>
+        <br>
+		<div class="field half">
+			<label for="story"></label>
+			<textarea name="story" id="story" type="text" placeholder="Shwifty tiny rick wubba lubba dub dub portals intergalactic timetravel  wormholes morty all in  your ear."></textarea>
+		</div>
+
+		<ul class="actions">
+			<li><input value="Create Story" class="button alt scrolly medium" type="submit"></li>
+		</ul>
+	</form>
+</div>

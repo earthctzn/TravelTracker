@@ -27,18 +27,18 @@ class PlacesController < ApplicationController
     end
      
     get '/places/:id/edit' do
-        @place = Place.find_by(id: params[:id])
+        @place = Place.find(params[:id])
         erb :'places/edit'
     end
 
     patch '/places/:id' do
-        @place = Place.find_by(id: params[:id])
+        @place = Place.find(params[:id])
         @place.update(city: params[:city], state: params[:state], country: params[:country], visit_date: params[:'visit_date'])
         redirect "/places/#{@place.id}"
     end
 
     delete '/places/:id' do
-        @place = place.find_by(id: params[:id])
+        @place = place.find(params[:id])
         @place.destroy
         redirect '/places'
     end

@@ -25,4 +25,22 @@ class StoriesController < ApplicationController
         erb :'/stories/show'
     end 
 
+    get '/stories/:id/edit' do
+        @story = Story.find(params[:id])
+        erb :'stories/edit'
+    end
+
+    patch '/stories/:id' do
+
+        @story = Story.find(params[:id])
+        @story.update(title: params[:title], content: params[:content])
+        redirect "/stories/#{@story.id}"
+    end
+
+    delete '/stories/:id' do
+        @story = Story.find(params[:id])
+        @story.destroy
+        redirect '/stories'
+    end
+
 end

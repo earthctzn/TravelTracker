@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_014235) do
   end
 
   create_table "stories", force: :cascade do |t|
+    t.string "title"
     t.string "content"
     t.integer "user_id"
   end

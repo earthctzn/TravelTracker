@@ -3,7 +3,7 @@
     <h1><%= @place.city %></h1>
         <p>State: <%= @place.state%></p>
         <p>Country: <%= @place.country%></p>
-        <p>Visited: <%= @place.visit_date.strftime("%b, %y") %></p>
+        <p>Visited: <%= @place.visit_date.strftime("%B %Y") %></p>
 
         <ul class="actions">
 			<li><a href="/places/<%= @place.id%>/edit" class="button alt scrolly big">Edit this Place</a></li>

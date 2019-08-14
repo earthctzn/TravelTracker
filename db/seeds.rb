@@ -10,7 +10,7 @@ Place.create(city: "Vakencia", state: "Cataluña", country: "Spain", visit_date:
 Place.create(city: "Amsterdam", state: "Amsterdam", country: "Nederlands", visit_date: "April 2016", user: m)
 Place.create(city: "San Juan", state: "Puerto Rico", country: "USA", visit_date: "June 1999", user: i)
 
-Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: m)
-Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: o)
-Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: n)
-Story.create(content: "Super schwifty ipsum lormen artic daft drunken fart", user: i)
+Story.create(title: "Shwifty times", content: "Super schwifty ipsum lormen artic daft drunken fart", user: m)
+Story.create(title: "Squanchy times", content: "Super schwifty ipsum lormen artic daft drunken fart", user: o)
+Story.create(title: "Wubba lubba times", content: "Super schwifty ipsum lormen artic daft drunken fart", user: n)
+Story.create(title: "A boogaloo time", content: "Super schwifty ipsum lormen artic daft drunken fart", user: i)
