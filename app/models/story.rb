@@ -1,7 +1,8 @@
 class Story < ActiveRecord::Base
 
     belongs_to :user
-    has_many :users
-    has_many :places, through: :users
+    has_many :places
+    has_many :users, through: :places
+    
     
 end

@@ -1,1 +1,12 @@
-<h1><%=@place.name%></h1>
+    
+<div class="inner">
+    <h1><%= @place.city %></h1>
+        <p>State: <%= @place.state%></p>
+        <p>Country: <%= @place.country%></p>
+        <p>Visited: <%= @place.visit_date.strftime("%b, %y") %></p>
+
+        <ul class="actions">
+			<li><a href="/places/<%= @place.id%>/edit" class="button alt scrolly big">Edit this Place</a></li>
+		</ul>
+	</div>
+</div>        
