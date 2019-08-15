@@ -8,8 +8,11 @@ class StoriesController < ApplicationController
 
     post '/stories' do
         if !params.empty?
-            @story = Story.create(params)
-            @story.users = current_user
+            #binding.pry
+            @story = Story.create(title: params[:title], content: params[:content])
+            @story.user = current_user
+            @place = Place.create(city: params[:city], state: params[:state], country: params[:country], visit_date: params[:'visit_date'])
+            @story.places << @place
             @story.save
             redirect '/stories'
         end
@@ -21,20 +24,22 @@ class StoriesController < ApplicationController
     end
 
     get '/stories/:id' do 
+        authenticate
+    
         @story = Story.find(params[:id])
         erb :'/stories/show'
     end 
 
     get '/stories/:id/edit' do
+        authenticate
         @story = Story.find(params[:id])
         erb :'stories/edit'
     end
 
     patch '/stories/:id' do
-
         @story = Story.find(params[:id])
         @story.update(title: params[:title], content: params[:content])
-        redirect "/stories/#{@story.id}"
+        redirect "/places/new"
     end
 
     delete '/stories/:id' do

@@ -18,6 +18,9 @@
 			<label for="visit_date"></label>
 			<input name="visit_date" id="visit_date" type="text" value="<%= @place.visit_date.strftime("%B %Y") %>">
 		</div>
+		<% if @failed%>
+			<p class="warning"> Oops! Something's wrong in your username/password combo.</p>
+		<%end%>
 		<ul class="actions">
 			<li><input value="Update" class="button alt scrolly medium" type="submit"></li>
             <li><a href="/places" value="Cancel" class="button alt scrolly medium">Cancel</a></li>

@@ -10,9 +10,6 @@ class PlacesController < ApplicationController
     post '/places' do
         if !params.empty?
             @place = Place.create(params)
-            @user = current_user
-            @user.places << @place
-            @place.save
             redirect '/places'
         end
     end

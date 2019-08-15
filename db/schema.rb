@@ -10,14 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_014235) do
+ActiveRecord::Schema.define(version: 2019_08_14_150514) do
 
   create_table "places", force: :cascade do |t|
     t.string "city"
     t.string "state"
     t.string "country"
-    t.integer "user_id"
-    t.integer "story_id"
     t.datetime "visit_date"
   end
 
@@ -25,6 +23,11 @@ ActiveRecord::Schema.define(version: 2019_08_13_014235) do
     t.string "title"
     t.string "content"
     t.integer "user_id"
+  end
+
+  create_table "story_places", force: :cascade do |t|
+    t.integer "story_id"
+    t.integer "place_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,12 +9,10 @@
 			<label for="password">Password</label>
 			<input name="password" id="password" type="password" placeholder="Password">
 		</div>
-		<% if @failed%>
-			<p class="warning"> Oops! Something's wrong in your username/password combo.</p>
-		<%end%>
 
 		<ul class="actions">
 			<li><input value="Log In" class="button alt scrolly big" type="submit"></li>
+			<li><a href="/signup" class="button alt scrolly big"> Sign up </a></li>
 		</ul>
 
 	</form>

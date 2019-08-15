@@ -1,6 +1,7 @@
 class Place < ActiveRecord::Base
 
-    belongs_to :user
-    belongs_to :story
+
+    has_many :story_places
+    has_many :stories, through: :story_places
 
 end
