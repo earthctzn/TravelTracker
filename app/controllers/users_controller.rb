@@ -9,5 +9,9 @@ class UsersController < ApplicationController
         erb :'users/index'
     end
 
+    get '/logout' do
+        session.clear
+        redirect '/index'
+    end
 
 end

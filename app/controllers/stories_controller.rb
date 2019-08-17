@@ -27,12 +27,14 @@ class StoriesController < ApplicationController
     get '/stories/:id' do 
         authenticate
         @story = Story.find(params[:id])
+        
         #binding.pry
         erb :'/stories/show'
     end 
 
     get '/stories/:id/edit' do
         authenticate
+        auth_user(@story)
         @story = Story.find(params[:id])
         erb :'stories/edit'
     end
@@ -50,5 +52,6 @@ class StoriesController < ApplicationController
         @story.destroy
         redirect '/stories'
     end
+
 
 end

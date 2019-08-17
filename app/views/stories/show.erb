@@ -4,10 +4,12 @@
         <p>City: <%= @story.places.first.city%></p>
         <p>State: <%= @story.places.first.state%></p>
         <p>Country: <%= @story.places.first.country%></p>
-        <p>Las visit:<%= @story.places.first.visit_date.strftime('%b %Y') %></p>
+        <p>Las visit: <%= @story.story_date.strftime('%b %Y') %></p>
 
-        <ul class="actions">
-			<li><a href="/stories/<%= @story.id%>/edit" class="button alt scrolly small">Edit this Story</a></li>
-		</ul>
+        <% if @story.user == current_user %>
+            <ul class="actions">
+			    <li><a href="/stories/<%= @story.id%>/edit" class="button alt scrolly small">Edit this Story</a></li>
+		    </ul>
+        <%end%>
 	</div>
 </div>  

@@ -16,7 +16,7 @@
             <li><a href="/stories" value="Cancel" class="button alt scrolly medium">Cancel</a></li>
 		</ul>
 	</form>
-        <form action="/stories/<%= @story.id %>" method="post">
+    <form action="/stories/<%= @story.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
         <input type="hidden" name="id" value="<%= @story.id %>">
         <input type="submit" value="Delete" class="button alt scrolly medium">

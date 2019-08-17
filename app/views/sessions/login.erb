@@ -14,7 +14,9 @@
 					<p><%= m %></p>
 				<% end %>
 			<%end%>
-
+			<% if @failed%>
+				<p> Oops! there is something wrong with your username and password combination. Please try again.</p>
+			<% end %>
 		<ul class="actions">
 			<li><input value="Log In" class="button alt scrolly big" type="submit"></li>
 			<li><a href="/signup" class="button alt scrolly big"> Sign up </a></li>

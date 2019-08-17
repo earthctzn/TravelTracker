@@ -13,8 +13,8 @@
 			<label for="password"></label>
 			<input name="password" id="confirm_password" type="password" placeholder="Confirm Password" required>
 			<% if @user && @user.errors.any? %>
-				<% @user.errors.full_messages.each do |m| %>
-					<p><%= m %></p>
+				<% @user.errors.full_messages.each do |errmsg| %>
+					<p><%= errmsg %></p>
 				<% end %>
 			<%end%>
 		</div><br>
