@@ -7,15 +7,19 @@
 		</div>
 		<div class="field half">
 			<label for="password"></label>
-			<input name="password" id="password" type="password" placeholder="Password">
+			<input name="password" id="password" type="password" placeholder="Password" required>
 		</div>
 		<div class="field half">
-			<label for="password">Password</label>
-			<input name="password" id="password" type="password" placeholder="Confirm Password">
-		</div>
-
+			<label for="password"></label>
+			<input name="password" id="confirm_password" type="password" placeholder="Confirm Password" required>
+			<% if @user && @user.errors.any? %>
+				<% @user.errors.full_messages.each do |m| %>
+					<p><%= m %></p>
+				<% end %>
+			<%end%>
+		</div><br>
 		<ul class="actions">
-			<li><input value="Signup" class="button alt scrolly big" type="submit"></li>
+			<li><input value="Signup" class="button alt scrolly medium" type="submit"></li>
 		</ul>
 	</form>
 </div>

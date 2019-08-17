@@ -7,6 +7,7 @@ class StoriesController < ApplicationController
     end
 
     post '/stories' do
+        authenticate
         if !params.empty?
             #binding.pry
             @story = Story.create(title: params[:title], content: params[:content])
@@ -25,8 +26,8 @@ class StoriesController < ApplicationController
 
     get '/stories/:id' do 
         authenticate
-    
         @story = Story.find(params[:id])
+        #binding.pry
         erb :'/stories/show'
     end 
 
@@ -37,12 +38,14 @@ class StoriesController < ApplicationController
     end
 
     patch '/stories/:id' do
+        authenticate
         @story = Story.find(params[:id])
         @story.update(title: params[:title], content: params[:content])
-        redirect "/places/new"
+        redirect "/stories/#{@story.id}"
     end
 
     delete '/stories/:id' do
+        authenticate
         @story = Story.find(params[:id])
         @story.destroy
         redirect '/stories'

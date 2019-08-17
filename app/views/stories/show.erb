@@ -1,5 +1,5 @@
 <div class="inner">
-    <h1><%= @story.title %></h1>
+    <h1><%= @story.title %> by <%= @story.user.username %></h1>
         <p><%= @story.content %></p>
         <p>City: <%= @story.places.first.city%></p>
         <p>State: <%= @story.places.first.state%></p>

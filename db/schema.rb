@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 2019_08_14_150514) do
     t.string "city"
     t.string "state"
     t.string "country"
-    t.datetime "visit_date"
   end
 
   create_table "stories", force: :cascade do |t|
     t.string "title"
     t.string "content"
     t.integer "user_id"
+    t.datetime "story_date"
   end
 
   create_table "story_places", force: :cascade do |t|

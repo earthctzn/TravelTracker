@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
         @places = Place.all
         erb :'/places/index'
     end
-    post '/places' do
+    post '/places' do # I have to reavaluate if this is necessary anymore.
         if !params.empty?
             @place = Place.create(params)
             redirect '/places'
@@ -35,7 +35,7 @@ class PlacesController < ApplicationController
     end
 
     delete '/places/:id' do
-        @place = place.find(params[:id])
+        @place = Place.find(params[:id])
         @place.destroy
         redirect '/places'
     end
