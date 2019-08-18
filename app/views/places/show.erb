@@ -3,10 +3,14 @@
     <h1><%= @place.city %></h1>
         <p>State: <%= @place.state%></p>
         <p>Country: <%= @place.country%></p>
-        <p>Visited: <%= @place.visit_date.strftime("%B %Y") %></p>
-
+        <% @place.stories.each do |s| %>
+            <p>Stories:</p>
+            <p><%= s.title %></p>
+            <p><%= s.content %></p>
+            <p><%= s.story_date.strftime('%b %Y') %></p>
+        <% end %>
         <ul class="actions">
-			<li><a href="/places/<%= @place.id%>/edit" class="button alt scrolly big">Edit this Place</a></li>
+			<li><a href="/places" class="button alt scrolly big">Back</a></li>
 		</ul>
 	</div>
 </div>        

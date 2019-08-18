@@ -8,7 +8,7 @@
         <br>
 		<div class="field half">
 			<label for="content"></label>
-			<textarea name="content" id="story" type="text" placeholder="Shwifty tiny rick wubba lubba dub dub portals intergalactic timetravel  wormholes morty all in  your ear."></textarea>
+			<textarea name="content" id="story" type="text" placeholder="Shwifty tiny rick wubba lubba dub dub portals intergalactic timetravel wormholes morty all in your ear."></textarea>
 		</div>
 		<br>
 		<div class="field half">
@@ -22,11 +22,17 @@
         <div class="field half">
 			<label for="country"></label>
 			<input name="country" id="country" type="text" placeholder="Country">
-		</div>
+		</div><br>
         <div class="field half">
-			<label for="visit_date"></label>
-			<input name="visit_date" id="visit_date" type="text" placeholder="Visit Date">
+			<label for="story_date"></label>
+			<input name="story_date" id="story_date" type="date" placeholder="Story Date">
 		</div>
+		
+		<% if @user && @user.errors.any? %>
+			<% @user.errors.full_messages.each do |errmsg| %>
+				<p><%= errmsg %></p>
+			<% end %>
+		<% end %>
 
 		<ul class="actions">
 			<li><input value="Create Story" class="button alt scrolly medium" type="submit"></li>

@@ -2,11 +2,12 @@ class PlacesController < ApplicationController
 
  
 
-    # get '/places' do
-    #     authenticate
-    #     @places = Place.all
-    #     erb :'/places/index'
-    # end
+    get '/places' do
+        authenticate
+        nice_params = nope(params)
+        @places = Place.all
+        erb :'/places/index'
+    end
     # post '/places' do # I have to reavaluate if this is necessary anymore.
     #     if !params.empty?
     #         @place = Place.create(params)
@@ -18,10 +19,12 @@ class PlacesController < ApplicationController
     #     erb :'/places/new'
     # end
 
-    # get '/places/:id' do     
-    #     @place = Place.find(params[:id])
-    #     erb :'/places/show'
-    # end
+    get '/places/:id' do
+        authenticate 
+        nice_params = nope(params)  
+        @place = Place.find(nice_params[:id])
+        erb :'/places/show'
+    end
      
     # get '/places/:id/edit' do
     #     @place = Place.find(params[:id])

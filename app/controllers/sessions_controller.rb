@@ -1,14 +1,14 @@
 class SessionsController < ApplicationController
 
     get '/login' do
-        redirect '/places' if logged_in?
+        redirect '/home' if logged_in?
         @failed = false
         erb :'sessions/login'
     end
 
-    post '/login' do 
-        @user = User.find_by(username: params[:username])
-        if !!@user && @user.authenticate(params[:password])
+    post '/login' do
+        @user = User.find_by(username: nice_params[:username])
+        if !!@user && @user.authenticate(nice_params[:password])
             session[:user_id] = @user.id
             redirect :'/stories'
         else
@@ -23,8 +23,8 @@ class SessionsController < ApplicationController
     end
 
     post '/signup' do
-        # binding.pry
-        @user = User.create(params)
+        #binding.pry
+        @user = User.create(nice_params)
         if @user.errors.any?
             erb :"sessions/signup"
         else

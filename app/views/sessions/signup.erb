@@ -1,25 +1,31 @@
 <div class="inner">
 	<h1>Noice! Signup below and share your travel stories.</h1> 
 	<form action="/signup" method="post">
+
 		<div class="field half first">
 			<label for="username"></label>
-			<input name="username" id="username" type="text" placeholder="username">
+			<input name="username" id="username" type="text" placeholder="username" required>
 		</div>
+
 		<div class="field half">
 			<label for="password"></label>
 			<input name="password" id="password" type="password" placeholder="Password" required>
 		</div>
-		<div class="field half">
-			<label for="password"></label>
-			<input name="password" id="confirm_password" type="password" placeholder="Confirm Password" required>
+
+		<div class="field half"> 
+			<label for="password_confirmation"></label>
+			<input name="password_confirmation" id="confirm_password" type="password" placeholder="Password" required>
+		</div>
+
 			<% if @user && @user.errors.any? %>
 				<% @user.errors.full_messages.each do |errmsg| %>
 					<p><%= errmsg %></p>
 				<% end %>
-			<%end%>
-		</div><br>
+			<% end %>
+			
 		<ul class="actions">
 			<li><input value="Signup" class="button alt scrolly medium" type="submit"></li>
+			<li><a href="/index" class="button alt scrolly medium"> Cancel </a></li>
 		</ul>
 	</form>
 </div>
