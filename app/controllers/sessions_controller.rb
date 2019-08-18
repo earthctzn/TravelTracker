@@ -7,10 +7,11 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do
+        nice_params = cleanse(params)
         @user = User.find_by(username: nice_params[:username])
         if !!@user && @user.authenticate(nice_params[:password])
             session[:user_id] = @user.id
-            redirect :'/stories'
+            redirect :'/home'
         else
             @failed = true
             erb :'sessions/login'
@@ -18,12 +19,12 @@ class SessionsController < ApplicationController
     end
 
     get '/signup' do
-        redirect '/stories' if logged_in?
+        redirect '/home' if logged_in?
         erb :'sessions/signup'
     end
 
     post '/signup' do
-        #binding.pry
+        nice_params = cleanse(params)
         @user = User.create(nice_params)
         if @user.errors.any?
             erb :"sessions/signup"

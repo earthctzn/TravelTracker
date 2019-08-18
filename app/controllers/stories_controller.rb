@@ -10,7 +10,7 @@ class StoriesController < ApplicationController
         authenticate
         if !params.empty?
 
-            nice_params = nope(params)
+            nice_params = cleanse(params)
             @story = Story.create(title: nice_params[:title], content: nice_params[:content], user_id: "#{current_user.id}", story_date: nice_params[:'story_date'])
             @place = Place.create(city: nice_params[:city], state: nice_params[:state], country: nice_params[:country])
             @story.places << @place
@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
 
     get '/stories/:id' do 
         authenticate
-        nice_params = nope(params)
+        nice_params = cleanse(params)
         @story = Story.find(nice_params[:id])
         #binding.pry
         erb :'/stories/show'
@@ -34,7 +34,7 @@ class StoriesController < ApplicationController
 
     get '/stories/:id/edit' do
         authenticate
-        nice_params = nope(params)
+        nice_params = cleanse(params)
         auth_user(@story)
         @story = Story.find(nice_params[:id])
         erb :'stories/edit'
@@ -42,7 +42,7 @@ class StoriesController < ApplicationController
 
     patch '/stories/:id' do
         authenticate
-        nice_params = nope(params)
+        nice_params = cleanse(params)
         auth_user(@story)
         @story = Story.find(nice_params[:id])
         @story.update(title: nice_params[:title], content: nice_params[:content])
@@ -51,7 +51,7 @@ class StoriesController < ApplicationController
 
     delete '/stories/:id' do
         authenticate
-        nice_params = nope(params)
+        nice_params = cleanse(params)
         auth_user(@story)
         @story = Story.find(nice_params[:id])
         @story.destroy

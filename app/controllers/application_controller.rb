@@ -47,7 +47,7 @@ class ApplicationController < Sinatra::Base
             end
         end
 
-        def nope(params)
+        def cleanse(params)
             nice_params = params.dup
             params.each do |k,v| 
                 nice_params[k] = Rack::Utils.escape_html(v)
