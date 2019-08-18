@@ -19,9 +19,9 @@ class ApplicationController < Sinatra::Base
         authenticate
         @user = current_user
         if !@user
-            redirect :'/home'
+            redirect 'sessions/home'
         else
-            erb :home
+            erb :'index'
         end
     end 
 
@@ -37,13 +37,13 @@ class ApplicationController < Sinatra::Base
 
         def authenticate
             if !logged_in? || current_user.nil?
-                redirect :'/login'
+                redirect 'sessions/login'
             end
         end
 
         def auth_user(story)
             if !story || current_user != story.user
-            redirect '/home'
+            redirect 'sessions/home'
             end
         end
 
@@ -53,6 +53,11 @@ class ApplicationController < Sinatra::Base
                 nice_params[k] = Rack::Utils.escape_html(v)
             end 
             nice_params
+        end
+
+        not_found do
+            status 404
+            erb :'errors/404', layout: false
         end
 
 

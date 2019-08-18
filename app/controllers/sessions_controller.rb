@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
         @user = User.find_by(username: nice_params[:username])
         if !!@user && @user.authenticate(nice_params[:password])
             session[:user_id] = @user.id
-            redirect :'/home'
+            redirect :'sessions/home'
         else
             @failed = true
             erb :'sessions/login'
