@@ -34,16 +34,16 @@ class StoriesController < ApplicationController
     get '/stories/:id/edit' do
         authenticate
         nice_params = cleanse(params)
-        auth_user(@story)
         @story = Story.find(nice_params[:id])
+        auth_user(@story)
         erb :'stories/edit'
     end
 
     patch '/stories/:id' do
         authenticate
         nice_params = cleanse(params)
-        auth_user(@story)
         @story = Story.find(nice_params[:id])
+        auth_user(@story)
         @story.update(title: nice_params[:title], content: nice_params[:content])
         redirect "/stories/#{@story.id}"
     end
@@ -51,8 +51,8 @@ class StoriesController < ApplicationController
     delete '/stories/:id' do
         authenticate
         nice_params = cleanse(params)
-        auth_user(@story)
         @story = Story.find(nice_params[:id])
+        auth_user(@story)
         @story.destroy
         redirect '/stories'
     end
