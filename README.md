@@ -36,4 +36,4 @@ Everyone interacting in the TravelTracker project’s codebases, issue trackers,
 * **Caleb** - *Initial Work* - [TravelTracker](https://github.com/<earthctzn>/TravelTracker)
 
 ### Blog Post
-[title](url)
+[placeholder](url)

@@ -1,21 +1,18 @@
 <div class="inner">
     <h1>My Stories</h1>
 
-
         <% @user.stories.each do |story|%>
             <p> 
                 <a href="/stories/<%= story.id %>" alt="Link to view <%= story.title %> details." title="Click to view <%= story.title %> details."><%= story.title%></a>
             </p>
         <% end %>
 
-
-
         <ul class="actions">
             <li><a href="/stories/new" class="button alt scrolly big"> Add a Story </a></li>
 		</ul>
-        <form action="/logout" method="post">
+        <%# <form action="/logout" method="post">
                 <input type="hidden" name="_method" value="delete">
                 <input type="submit" value="Log Out" class="button alt scrolly big">
-        </form>
+        </form> %>
 	</div>
 </div>
