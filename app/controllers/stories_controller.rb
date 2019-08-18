@@ -27,8 +27,11 @@ class StoriesController < ApplicationController
         authenticate
         nice_params = cleanse(params)
         @story = Story.find(nice_params[:id])
-        #binding.pry
-        erb :'/stories/show'
+        if !Story.all.include?(@story) 
+            redirect 'errors/404'
+        else
+            erb :'/stories/show'
+        end
     end 
 
     get '/stories/:id/edit' do
@@ -43,9 +46,13 @@ class StoriesController < ApplicationController
         authenticate
         nice_params = cleanse(params)
         @story = Story.find(nice_params[:id])
-        auth_user(@story)
-        @story.update(title: nice_params[:title], content: nice_params[:content])
-        redirect "/stories/#{@story.id}"
+        if !Story.all.include?(@story) 
+            redirect 'errors/404'
+        else
+            auth_user(@story)
+            @story.update(title: nice_params[:title], content: nice_params[:content])
+            redirect "/stories/#{@story.id}"
+        end
     end
 
     delete '/stories/:id' do

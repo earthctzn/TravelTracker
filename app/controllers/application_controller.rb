@@ -19,9 +19,10 @@ class ApplicationController < Sinatra::Base
         authenticate
         @user = current_user
         if !@user
-            redirect 'sessions/home'
-        else
             erb :'index'
+        else
+            redirect '/sessions/home'
+            
         end
     end 
 

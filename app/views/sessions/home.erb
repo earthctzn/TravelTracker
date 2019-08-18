@@ -1,7 +1,6 @@
 <div class="inner">
     <h1>My Stories</h1>
-
-        <% @user.stories.each do |story|%>
+        <% current_user.stories.each do |story|%>
             <p> 
                 <a href="/stories/<%= story.id %>" alt="Link to view <%= story.title %> details." title="Click to view <%= story.title %> details."><%= story.title%></a>
             </p>

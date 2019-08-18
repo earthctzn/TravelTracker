@@ -9,11 +9,11 @@ class PlacesController < ApplicationController
 
     get '/places/:id' do
         authenticate 
-        if !Place.all.include?(params[:id]) 
+        nice_params = cleanse(params)  
+        @place = Place.find(nice_params[:id])
+        if !Place.all.include?(@place) 
             redirect 'errors/404'
         else
-            nice_params = cleanse(params)  
-            @place = Place.find(nice_params[:id])
             erb :'/places/show'
         end
     end  

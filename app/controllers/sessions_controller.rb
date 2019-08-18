@@ -1,9 +1,15 @@
 class SessionsController < ApplicationController
+    get '/sessions/home' do
+        erb :'sessions/home'
+    end
 
     get '/login' do
-        redirect '/home' if logged_in?
-        @failed = false
-        erb :'sessions/login'
+        if logged_in?
+            redirect '/stories' 
+        else
+            @failed = false
+            erb :'sessions/login'
+        end
     end
 
     post '/login' do
@@ -19,8 +25,10 @@ class SessionsController < ApplicationController
     end
 
     get '/signup' do
-        redirect '/home' if logged_in?
-        erb :'sessions/signup'
+        if logged_in?
+            redirect '/stories' 
+            erb :'sessions/signup'
+        end
     end
 
     post '/signup' do
