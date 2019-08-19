@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
         erb :'sessions/home'
     end
 
+    get '/sessions/login' do
+        erb :'/sessions/login'
+    end
+
     get '/login' do
         if logged_in?
             @failed = false

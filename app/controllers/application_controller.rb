@@ -22,7 +22,6 @@ class ApplicationController < Sinatra::Base
             erb :'index'
         else
             redirect '/sessions/home'
-            
         end
     end 
 

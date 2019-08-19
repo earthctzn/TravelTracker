@@ -26,7 +26,7 @@ class StoriesController < ApplicationController
     get '/stories/:id' do 
         authenticate
         nice_params = cleanse(params)
-        binding.pry
+        #binding.pry
         if @story = Story.all.find_by(id: nice_params[:id]) 
             erb :'/stories/show' 
         else
