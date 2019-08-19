@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 
     get '/login' do
         if logged_in?
-            redirect '/stories' 
-        else
             @failed = false
+            redirect '/stories' 
+        else 
             erb :'sessions/login'
         end
     end
