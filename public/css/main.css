@@ -521,7 +521,7 @@
 	}
 
 		form .field {
-			margin-bottom: 1.5em;
+			margin-bottom: .5em;
 		}
 
 			form .field.half {
@@ -554,7 +554,6 @@
 	}
 
 	input[type="text"],
-	
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -1398,33 +1397,33 @@
 		background: #0d1217;
 		z-index: 10002;
 		position: relative;
-		width: 4em;
+		width: 8em;
 	}
 
 		#nav ul {
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			position: fixed;
+			position: auto;
 			top: 1em;
 			left: 0;
 		}
 
 			#nav ul li {
 				padding: 0;
-				width: 3.75em;
-				text-align: Center;
+				width: 7em;
+				text-align: center;
 				margin-bottom: 1em;
 			}
 
 				#nav ul li a {
-					color: rgba(255, 255, 255, 0.5);
+					color: rgb(114, 200, 240);
 					text-decoration: none;
 					font-size: 1.5em;
 				}
 
 					#nav ul li a:hover {
-						color: white;
+						color: rgb(167, 131, 77);
 					}
 
 					#nav ul li a.active {
@@ -1466,8 +1465,8 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		min-height: 75vh;
-		height: 75vh;
+		min-height: 80vh;
+		height: 80vh;
 		position: relative;
 		background: #000;
 		background-image: url(../../images/banner.jpg);
@@ -1476,7 +1475,7 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		text-align: center;
-		color: rgb(170, 87, 87);
+		color: rgb(114, 200, 240);
 	}
 
 		#banner:before {
@@ -1520,16 +1519,16 @@
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
-			color: #FFF;
+			color: rgb(151, 111, 52);
 		}
 
 		#banner p {
 			font-size: 1.5em;
-			margin-bottom: 1.75em;
+			margin-bottom: .5em;
 		}
 
 		#banner a {
-			color: #FFF;
+			color: rgb(114, 200, 240);
 			text-decoration: none;
 		}
 

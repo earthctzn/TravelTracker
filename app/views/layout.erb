@@ -17,11 +17,12 @@
 			<!-- Nav -->
 				<nav id="nav">
 				<% if logged_in? %>
+					
 					<ul>
-						<li><a href="/home" class="active"><span class="icon fa-home"></span></a></li>
-						<li><a href="/places"><span class="icon fa-camera-retro"></span></a></li>
-						<li><a href="/stories"><span class="icon fa-file-text-o"></span></a></li>
-						<li><a href="/logout"><span class="icon fa-sign-out"></span></a></li>
+						<li><a href="/home" alt="Homepage button" title="<%=current_user.username%>s' Homepage"><%=current_user.username%><span></span></a></li>
+						<li><a href="/places" alt="all places button" title="All Places"><span class="icon fa-camera-retro"></span></a></li>
+						<li><a href="/stories" alt="all stories button" title="All Stories"><span class="icon fa-file-text-o"></span></a></li>
+						<li><a href="/logout" alt="logout button" title="Log out"><span class="icon fa-sign-out"></span></a></li>
 					</ul>
 				<% end %>
 				</nav>
