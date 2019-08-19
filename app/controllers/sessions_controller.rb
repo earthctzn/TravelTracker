@@ -26,7 +26,8 @@ class SessionsController < ApplicationController
 
     get '/signup' do
         if logged_in?
-            redirect '/stories' 
+            redirect '/stories'  
+        else
             erb :'sessions/signup'
         end
     end
