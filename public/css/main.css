@@ -1397,7 +1397,7 @@
 		background: #0d1217;
 		z-index: 10002;
 		position: relative;
-		width: 8em;
+		width: 7em;
 	}
 
 		#nav ul {
@@ -1411,7 +1411,7 @@
 
 			#nav ul li {
 				padding: 0;
-				width: 7em;
+				width: 6em;
 				text-align: center;
 				margin-bottom: 1em;
 			}
@@ -1452,7 +1452,7 @@
 		display: -ms-flexbox;
 		-ms-flex-pack: center;
 		-ms-flex-align: center;
-		padding: 8em 0 6em 0;
+		padding: 3em 0 3em 0;
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
