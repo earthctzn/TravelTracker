@@ -28,6 +28,11 @@ class SessionsController < ApplicationController
         end
     end
 
+    get '/logout' do
+        session.clear
+        redirect '/index'
+    end
+
     get '/signup' do
         if logged_in?
             redirect '/stories'  
