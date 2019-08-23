@@ -1,32 +1,43 @@
 <div class="inner">
 	<h1>Tell us your travel story!</h1>
     <form action="/stories" method="post">
-		<div class="field half">
-			<label for="title"></label>
-			<input name="title" id="title" type="text" placeholder="My trip to Gazorpazorp.">
-		</div>
+			<div class="field half">
+				<label for="title"></label>
+				<input name="title" id="title" type="text" placeholder="My trip to Gazorpazorp.">
+			</div>
         <br>
-		<div class="field half">
-			<label for="content"></label>
-			<textarea name="content" id="story" type="text" placeholder="Shwifty tiny rick wubba lubba dub dub portals intergalactic timetravel wormholes morty all in your ear."></textarea>
-		</div>
-		<br>
-		<div class="field half">
-			<label for="city"></label>
-			<input name="city" id="city" type="text" placeholder="City">
-		</div><br>
-		<div class="field half">
-			<label for="state"></label>
-			<input name="state" id="state" type="text" placeholder="State">
-		</div><br>
-        <div class="field half">
-			<label for="country"></label>
-			<input name="country" id="country" type="text" placeholder="Country">
-		</div><br>
-        <div class="field half">
-			<label for="story_date"></label>
-			<input name="story_date" id="story_date" type="date" placeholder="Story Date">
-		</div>
+			<div class="field half">
+				<label for="content"></label>
+				<textarea name="content" id="story" type="text" placeholder="Shwifty tiny rick wubba lubba dub dub portals intergalactic timetravel wormholes morty all in your ear."></textarea>
+			</div>
+			<br>
+			<% if !@places.empty? %>
+				<div class="field half">
+					<select name="place_id">
+						<%@places.each do |plc|%>
+							<option value="0" placeholder="Please select a place">Please select a place</option>
+							<option value="<%= plc.id %>"> <%= plc.country%>, <%= plc.city %></option>
+						<% end %>
+					</select>
+				</div><br>
+			<% end %>
+			<div class="field half">
+				<label for="city"></label>
+				<input name="city" id="city" type="text" placeholder="City">
+			</div><br>
+			<div class="field half">
+				<label for="state"></label>
+				<input name="state" id="state" type="text" placeholder="State">
+			</div><br>
+      <div class="field half">
+				<label for="country"></label>
+				<input name="country" id="country" type="text" placeholder="Country">
+			</div><br>
+      <div class="field half">
+				<label for="story_date"></label>
+				<input name="story_date" id="story_date" type="date" placeholder="Story Date">
+			</div><br>
+
 		
 		<% if @user && @user.errors.any? %>
 			<% @user.errors.full_messages.each do |errmsg| %>
