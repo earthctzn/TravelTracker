@@ -6,7 +6,7 @@
         <h3>Related Stories:</h3>
         <% @place.stories.each do |story| %>
             <p> 
-                <a href="/places/<%= story.id %>" alt="Link to view <%= story.title %> details." title="Click to view <%= story.title %> details."><%= story.title%></a>
+                <a href="/stories/<%= story.id %>" alt="Link to view <%= story.title %> details." title="Click to view <%= story.title %> details."><%= story.title%></a>
             </p>
         <% end %>
         <ul class="actions">

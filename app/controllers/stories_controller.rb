@@ -11,10 +11,10 @@ class StoriesController < ApplicationController
         if !params.empty?
             nice_params = cleanse(params)
             @story = Story.create(title: nice_params[:title], content: nice_params[:content], user_id: "#{current_user.id}", story_date: nice_params[:'story_date'])
-            if nice_params[:place_id] > "0"
-                @place = Place.find_by(id: nice_params[:place_id])
-            else nice_params[:place_id] == nil || nice_params[:place_id] == "0"
-                @place = Place.find_or_create_by(city: nice_params[:city], state: nice_params[:state], country: nice_params[:country])              
+            if nice_params[:place_id] == nil || nice_params[:place_id] == "0"
+                @place = Place.find_or_create_by(city: nice_params[:city], state: nice_params[:state], country: nice_params[:country]) 
+            else  nice_params[:place_id] > "0"
+                @place = Place.find_by(id: nice_params[:place_id])            
             end
             @story.places << @place
             @story.save

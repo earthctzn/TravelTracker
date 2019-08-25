@@ -14,7 +14,7 @@
 			<% if !@places.empty? %>
 				<div class="field half">
 					<select name="place_id">
-							<option value="0" >Please select a place</option>
+							<option value="0" >Please select a place or add one below.</option>
 							<%@places.each do |plc|%>
 							<option value="<%= plc.id %>"> <%= plc.country%>, <%= plc.city %></option>
 						<% end %>
