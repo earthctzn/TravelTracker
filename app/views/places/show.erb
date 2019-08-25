@@ -3,11 +3,11 @@
     <h1><%= @place.city %></h1>
         <p>State: <%= @place.state%></p>
         <p>Country: <%= @place.country%></p>
-        <% @place.stories.each do |s| %>
-            <p>Stories:</p>
-            <p><%= s.title %></p>
-            <p><%= s.content %></p>
-            <p><%= s.story_date.strftime('%b %Y') %></p>
+        <h3>Related Stories:</h3>
+        <% @place.stories.each do |story| %>
+            <p> 
+                <a href="/places/<%= story.id %>" alt="Link to view <%= story.title %> details." title="Click to view <%= story.title %> details."><%= story.title%></a>
+            </p>
         <% end %>
         <ul class="actions">
 			<li><a href="/places" class="button alt scrolly big">Back</a></li>
