@@ -10,7 +10,6 @@ class PlacesController < ApplicationController
     get '/places/:id' do
         authenticate 
         nice_params = cleanse(params)
-        #binding.pry
         if @place = Place.all.find_by(id: nice_params[:id]) 
             erb :'/places/show'
         else
