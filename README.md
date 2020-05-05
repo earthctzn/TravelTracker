@@ -5,7 +5,7 @@ Welcome and thank you for using TravelTracker!
 ## Getting Started
 
 To run this webap locally, you will need to fork [the repo](https://github.com/<earthctzn>/TravelTracker) 
-Once you have it downloaded and opened in a text editor like VSCode or Atom, you will need to install all the necessary gems to run TravelTracker. Or simply go to [earthctzn.com](http://earthctzn.com) to see it in action!
+Once you have it downloaded and opened in a text editor like VSCode or Atom, you will need to install all the necessary gems to run TravelTracker.
 
 To do so run:
 
