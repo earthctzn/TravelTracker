@@ -47,6 +47,9 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
+	#story-p:hover {
+		color: rgb(167, 131, 77);
+	}
 
 /* Box Model */
 
