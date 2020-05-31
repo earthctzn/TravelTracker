@@ -5,7 +5,7 @@ class CreateStories < ActiveRecord::Migration[5.2]
       t.string :content
       t.integer :user_id
       t.datetime :story_date
-      t.timestamp
+      t.timestamps
     end
   end
 end

@@ -3,7 +3,7 @@ class CreateStoryPlaces < ActiveRecord::Migration[5.2]
     create_table :story_places do |t|
       t.integer :story_id
       t.integer :place_id
-      t.timestamp
+      t.timestamps
     end
   end
 end

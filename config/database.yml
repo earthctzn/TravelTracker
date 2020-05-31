@@ -1,11 +1,23 @@
+# development:
+#   adapter: postgresql
+#   database: database.db
+
+# test:
+#   adapter: postgresql
+#   database: database.db
+
+# production:
+#   adapter: postgresql
+#   database: <%= ENV['DATABASE_URL'] %>
 development:
   adapter: postgresql
-  database: database.db
-
-test:
-  adapter: postgresql
-  database: database.db
-
+  encoding: unicode
+  database: development
+  pool: 2
+  
 production:
   adapter: postgresql
-  database: <%= ENV['DATABASE_URL'] %>
+  encoding: unicode
+  pool: 5
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: production

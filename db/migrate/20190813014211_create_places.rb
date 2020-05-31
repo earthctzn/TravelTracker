@@ -4,7 +4,7 @@ class CreatePlaces < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :state
       t.string :country
-      t.timestamp
+      t.timestamps
     end
   end
 end
