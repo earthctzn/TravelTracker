@@ -3,7 +3,7 @@
 
 
         <% @stories.each do |story|%>
-            <p> 
+            <p id="story-p"> 
                 <a href="/stories/<%= story.id %>" alt="Link to view details." title="Click to read story."><%= story.title%></a>
             </p>
         <% end %>
