@@ -8,5 +8,5 @@ use UsersController
 
 run ApplicationController
 
-# run Sinatra::Aplication
+
 
