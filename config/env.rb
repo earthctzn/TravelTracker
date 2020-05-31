@@ -17,9 +17,9 @@ configure :production do
     )
 end
 
-if ENV['SINATRA_ENV'] == 'development'
-    require_relative '../stash.rb'
-end
+# if ENV['SINATRA_ENV'] == 'development'
+#     require_relative '../stash.rb'
+# end
 
 require_relative '../constants'
 
