@@ -6,7 +6,7 @@ use PlacesController
 use StoriesController
 use UsersController
 
-# run ApplicationController
+run ApplicationController
 
-run Sinatra::Aplication
+# run Sinatra::Aplication
 
