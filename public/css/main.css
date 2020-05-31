@@ -47,7 +47,7 @@
 	body {
 		-webkit-text-size-adjust: none;
 	}
-	#story-p:hover {
+	#story-p a:hover {
 		color: rgb(167, 131, 77);
 	}
 
