@@ -84,5 +84,8 @@ DEPENDENCIES
   sqlite3
   tux
 
+RUBY VERSION
+   ruby 2.6.6p146
+
 BUNDLED WITH
-   2.1.2
+   2.1.4
