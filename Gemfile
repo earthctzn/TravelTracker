@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 gem "sinatra"
 
-gem "rack"
+gem "rack", ">= 2.2.3"
 
 gem "activerecord"
 
