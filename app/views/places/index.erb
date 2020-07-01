@@ -2,7 +2,7 @@
     <h1>Places</h1>
         <% @places.each do |place|%>
         <p> 
-            <a href="/places/<%= place.id %>" alt="Link to view <%= place.city %> details." title="Click to view <%= place.city %> details."><%= place.city %>, <%= place.country%></a>
+            <a href="/places/<%= place.id %>" alt="Link to view <%= place.city %> details." title="Click to view <%= place.city %> stories."><%= place.city %>, <%= place.country%></a>
         </p>
         <% end %>
         <ul class="actions">
