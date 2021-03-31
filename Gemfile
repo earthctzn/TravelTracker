@@ -1,13 +1,13 @@
 
 source 'https://rubygems.org'
 
-ruby ">= 2.6.6"
+ruby '>= 2.7.1'
 
 gem "sinatra"
 
 gem "rack", ">= 2.2.3"
 
-gem "activerecord"
+gem 'activerecord', '>= 6.0.3.5'
 
 gem "sinatra-activerecord"
 
